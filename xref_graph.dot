@@ -1,0 +1,48 @@
+digraph "xref graph" {
+  "lib/a1.ex"
+  "lib/a1.ex" -> "lib/b1.ex"
+  "lib/b1.ex" -> "lib/c1.ex"
+  "lib/a2.ex"
+  "lib/a2.ex" -> "lib/b2.ex"
+  "lib/b2.ex" -> "lib/c2.ex" [label="(compile)"]
+  "lib/a3.ex"
+  "lib/a3.ex" -> "lib/b3.ex"
+  "lib/b3.ex" -> "lib/c3.ex"
+  "lib/b1.ex"
+  "lib/b2.ex"
+  "lib/b3.ex"
+  "lib/c1.ex"
+  "lib/c2.ex"
+  "lib/c3.ex"
+  "lib/client_one.ex"
+  "lib/client_one.ex" -> "lib/a3.ex" [label="(compile)"]
+  "lib/client_three.ex"
+  "lib/client_three.ex" -> "lib/a3.ex" [label="(compile)"]
+  "lib/client_two.ex"
+  "lib/client_two.ex" -> "lib/a3.ex" [label="(compile)"]
+  "lib/module_recompilation_sandbox.ex"
+  "lib/strategy_1/after/core_event.ex"
+  "lib/strategy_1/after/core_event.ex" -> "lib/strategy_1/after/service_log.ex"
+  "lib/strategy_1/after/core_event_definition.ex"
+  "lib/strategy_1/after/event_user_created.ex"
+  "lib/strategy_1/after/event_user_created.ex" -> "lib/strategy_1/after/core_event_definition.ex" [label="(compile)"]
+  "lib/strategy_1/after/service_log.ex"
+  "lib/strategy_1/before/core_event.ex"
+  "lib/strategy_1/before/core_event.ex" -> "lib/strategy_1/before/service_log.ex"
+  "lib/strategy_1/before/event_user_created.ex"
+  "lib/strategy_1/before/event_user_created.ex" -> "lib/strategy_1/before/core_event.ex" [label="(compile)"]
+  "lib/strategy_1/before/service_log.ex"
+  "lib/strategy_2/after/queries.ex"
+  "lib/strategy_2/after/resolver.ex"
+  "lib/strategy_2/after/resolver.ex" -> "lib/strategy_2/after/services_user.ex"
+  "lib/strategy_2/after/schema.ex"
+  "lib/strategy_2/after/schema.ex" -> "lib/strategy_2/after/queries.ex" [label="(compile)"]
+  "lib/strategy_2/after/services_user.ex"
+  "lib/strategy_2/before/queries.ex"
+  "lib/strategy_2/before/queries.ex" -> "lib/strategy_2/before/resolver.ex"
+  "lib/strategy_2/before/resolver.ex" -> "lib/strategy_2/before/services_user.ex"
+  "lib/strategy_2/before/resolver.ex"
+  "lib/strategy_2/before/schema.ex"
+  "lib/strategy_2/before/schema.ex" -> "lib/strategy_2/before/queries.ex" [label="(compile)"]
+  "lib/strategy_2/before/services_user.ex"
+}
